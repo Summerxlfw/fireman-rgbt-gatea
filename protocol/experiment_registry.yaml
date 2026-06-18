@@ -1,0 +1,42 @@
+project_id: "forest_fire_rgbt"
+registry_version: 1
+created: "2026-05-30 (G1 切片③)"
+protocol_file: "../01_protocol/study_protocol.md"
+
+experiments:
+  - id: "E001"
+    status: "completed"
+    question: "YOLO dual 在 fold-0(→JAG)的 detection 上限?"
+    method: "B001 YOLO dual 50ep (F-1, seed42)"
+    dataset_split: "LOCO-A fold-0: FireMan+RGBT-3M → JAG"
+    metrics: {primary: "JAG val mAP50 = 0.2447", secondary: ["mAP50-95 0.0702", "internal peak 0.338"]}
+    seeds: [42]
+    notes: "F-1 锁定; plateau; 单 seed(dual 未 multi-seed)"
+
+  - id: "E002"
+    status: "completed"
+    question: "thermal 在 fold-0 上贡献多少(architecture-paired)?"
+    method: "B002 RGB-only 50ep ×3seed"
+    dataset_split: "LOCO-A fold-0"
+    metrics:
+      primary: "JAG val mAP50 3seed mean = 0.0841 (0.090/0.093/0.070)"
+      secondary: ["internal best mean 0.295±0.017", "thermal Δ JAG = +0.1606 ✅坐实(亲核 eval log)"]
+    seeds: [42, 1337, 2024]
+    notes: "best-epoch 口径; seed2024 bad seed(ep4 峰值); 残留: jag2023_rgbonly.yaml 磁盘 1-modality 待 agent 锁正确 2-modality 版"
+
+  - id: "E003"
+    status: "failed"
+    question: "DEIM Plan B 50ep 能否超 YOLO dual(顶会 upside)?"
+    method: "B003 DEIM Plan B 50ep seed42"
+    metrics: {primary: "EMA ep7 internal AP50=0.28 ≈ RGB-only(无优势); fire 0.036/smoke 0.527"}
+    seeds: [42]
+    failure_rule: "ep11+ 权重 NaN(loss_fgl ep13 爆炸, lr 太激进)"
+    notes: "eval pipeline 无 bug(mAP=1.0 是训练 per-batch 假象); HOLD, 待 user 决定是否修 lr 重跑"
+
+  - id: "E004"
+    status: "planned"
+    question: "thermal Δ 在 fold-1/2 是否复制(generalization)?"
+    method: "B001 dual + B002 RGB-only, 各 ×3seed"
+    dataset_split: "LOCO-A fold-1(FireMan+JAG→RGBT-3M) + fold-2(RGBT-3M+JAG→FireMan)"
+    acceptance_rule: "fold-1/2 thermal Δ 同向显著(>decisive 线) → claim 候选 B 多 fold 稳; 全 fold Δ>0 = 主 claim 坐实"
+    notes: "服务器按 study_protocol LOCO-A 生成 split+checksum 后跑; G1 lock 后启动"

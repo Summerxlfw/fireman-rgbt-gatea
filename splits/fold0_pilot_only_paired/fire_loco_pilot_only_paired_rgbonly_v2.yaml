@@ -1,0 +1,14 @@
+path: /mnt/topic2_datasets/fire_loco_pilot_only_paired
+train: ./images/train
+val: ./images/val
+modality:
+  rgb: images
+  rgb_clone_as_x: images
+modality_used:
+- rgb
+- rgb_clone_as_x
+Xch: 3
+names:
+  0: smoke
+  1: fire
+  2: person

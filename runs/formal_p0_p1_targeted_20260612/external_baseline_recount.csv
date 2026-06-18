@@ -1,0 +1,14 @@
+family,method,fold,seed,run_id,run_class,n_epochs,has_best_pt,best_epoch,best_map50,best_map50_95,final_map50,final_over_best,collapse,paired_delta_vs_rgb,notes
+P1-YOLOv11-RGBT,YOLOv11-RGBT-early,2,42,yolov11rgbt_early_fold2_nirfree_seed42,formal,80,True,31,0.095750,0.047070,0.043590,0.4552,True,-0.173840,pilot seed42/1337
+P1-YOLOv11-RGBT,YOLOv11-RGBT-early,2,1337,yolov11rgbt_early_fold2_nirfree_seed1337,formal,80,True,22,0.096890,0.031760,0.055070,0.5684,False,-0.167600,pilot seed42/1337
+P1-YOLOv11-RGBT,YOLOv11-RGBT-mid,2,42,yolov11rgbt_mid_fold2_nirfree_seed42,formal,80,True,29,0.145120,0.075520,0.086070,0.5931,False,-0.124470,pilot seed42/1337
+P1-YOLOv11-RGBT,YOLOv11-RGBT-mid,2,1337,yolov11rgbt_mid_fold2_nirfree_seed1337,formal,80,True,16,0.128660,0.042740,0.007710,0.0599,True,-0.135830,pilot seed42/1337
+P1-YOLOv11-RGBT,YOLOv11-RGBT-late,2,42,yolov11rgbt_late_fold2_nirfree_seed42,formal,80,True,51,0.173740,0.144000,0.078660,0.4527,True,-0.095850,pilot seed42/1337
+P1-YOLOv11-RGBT,YOLOv11-RGBT-late,2,1337,yolov11rgbt_late_fold2_nirfree_seed1337,formal,80,True,23,0.154960,0.139090,0.118280,0.7633,False,-0.109530,pilot seed42/1337
+P1-YOLOv11-RGBT,YOLOv11-RGBT-score,2,42,yolov11rgbt_score_fold2_nirfree_seed42,formal,80,True,16,0.255700,0.208350,0.223500,0.8741,False,-0.013890,pilot seed42/1337
+P1-YOLOv11-RGBT,YOLOv11-RGBT-score,2,1337,yolov11rgbt_score_fold2_nirfree_seed1337,formal,80,True,4,0.256420,0.228920,0.165720,0.6463,False,-0.008070,pilot seed42/1337
+P1-YOLOv11-RGBT,YOLOv11-RGBT-share,2,42,yolov11rgbt_share_fold2_nirfree_seed42,formal,80,True,29,0.255560,0.234660,0.130660,0.5113,False,-0.014030,pilot seed42/1337
+P1-YOLOv11-RGBT,YOLOv11-RGBT-share,2,1337,yolov11rgbt_share_fold2_nirfree_seed1337,formal,80,True,42,0.260440,0.232750,0.105790,0.4062,True,-0.004050,pilot seed42/1337
+P1-YOLOv11-RGBT,YOLOv11-RGBT-score,2,2024,yolov11rgbt_score_fold2_nirfree_seed2024,formal,80,True,20,0.259700,0.187400,0.179230,0.6901,False,-0.003700,seed2024 formal
+P1-YOLOv11-RGBT,YOLOv11-RGBT-share,2,2024,yolov11rgbt_share_fold2_nirfree_seed2024,formal,80,True,41,0.281620,0.187630,0.208690,0.7410,False,0.018220,seed2024 formal - POSITIVE TRANSFER
+P1-YOLOv11-RGBT,YOLOv11-RGBT-mid,2,2024,yolov11rgbt_mid_fold2_nirfree_seed2024,formal,80,True,29,0.063510,0.030660,0.020690,0.3258,True,-0.199890,seed2024 formal

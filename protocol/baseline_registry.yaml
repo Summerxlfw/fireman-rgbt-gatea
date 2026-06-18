@@ -1,0 +1,47 @@
+project_id: "forest_fire_rgbt"
+registry_version: 1
+locked: "2026-05-30 (G1 切片③)"
+
+baselines:
+  - id: "B001"
+    name: "YOLO11n-mm-mid dual-stream (RGB+IR)"
+    implementation_source: "local"
+    pretrained_weights: "COCO (yolo11n)"
+    training_recipe:
+      data_access: "RGB + IR (真 thermal), per-fold LOCO"
+      augmentation: "no mosaic/mixup (与 F-1 一致)"
+      optimizer: "default ultralytics"
+      epochs: "50"
+      early_stopping: "best.pt (best epoch)"
+    fairness_notes: "主战 candidate; thermal Δ 的 dual 端"
+    status: "reproduced"   # fold-0 done: JAG mAP50=0.2447 / internal peak 0.338
+
+  - id: "B002"
+    name: "YOLO11n-mm-mid RGB-only (Option C, X=rgb_clone_as_x)"
+    implementation_source: "local"
+    pretrained_weights: "COCO (yolo11n)"
+    training_recipe:
+      data_access: "RGB + rgb_clone (无 thermal 新信息), architecture-paired"
+      augmentation: "同 B001 (对称)"
+      epochs: "50"
+      early_stopping: "best.pt"
+    fairness_notes: "architecture-paired ablation; thermal Δ 的 RGB-only 端; 唯一差异=X 通道"
+    status: "reproduced"   # fold-0 done: internal 3seed mean 0.295±0.017 / JAG 3seed mean 0.0841
+
+  - id: "B003"
+    name: "DEIM Plan B dual-stream (DEIM_MG)"
+    implementation_source: "local"
+    pretrained_weights: "dfine-n"
+    training_recipe:
+      data_access: "RGB + IR dual-stream"
+      epochs: "50 (目标)"
+      early_stopping: "best.pt"
+      learning_rate: "base_lr=0.0004 (太激进, loss_fgl ep13 爆炸 → 待降到 0.0001 + grad clip)"
+    fairness_notes: "可选 upside (顶会路径); 当前 HOLD; eval pipeline 无 bug(per-batch 假象), 但训练崩"
+    status: "failed"   # ep11+ 权重 NaN; EMA ep7 internal AP50=0.28≈RGB-only, 无优势
+
+  - id: "B004"
+    name: "Top-8 RGB-T SOTA (H16/H19/H10/H14/H7/H8/H1/H15)"
+    implementation_source: "reproduced"
+    fairness_notes: "见 refs/high_tier_sota_inventory_2026-05-28.md + 02_experiments/sota_reproduction_inventory; F-2-B 阶段复现"
+    status: "planned"

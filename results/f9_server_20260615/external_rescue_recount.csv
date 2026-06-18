@@ -1,0 +1,4 @@
+route,method,label,status,primary_metric,best_map50,fire_ap50,final_best_ratio,evidence_path,claim_impact
+P0,adapted M2D-LIF,BLOCKED_ENV,blocked,fold2_val_mAP50,NA,NA,NA,/mnt/topic2_workspace/runs/f9_external_baseline_rescue_20260614/m2d_adaptation_report.md,"no valid metric; cannot downgrade or upgrade GateA"
+P1,CP-inspired modified reproduction,DEFERRED,deferred,NA,NA,NA,NA,NA,"not run"
+P2,YOLOv11-RGBT early/late completion,OFFICIAL_REPRODUCTION,completed,fold2_val_mAP50,NA,NA,NA,/mnt/topic2_workspace/runs/f9_external_baseline_rescue_20260614/external_rescue_recount_p2.csv,"table completeness only; not claim-changing; see external_rescue_recount_p2.csv for metrics (late>early is single-seed observation)"

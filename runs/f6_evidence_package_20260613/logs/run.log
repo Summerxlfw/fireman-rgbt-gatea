@@ -1,0 +1,110 @@
+10:20:41 [INFO] ============================================================
+10:20:41 [INFO] F6 Evidence Package: Bootstrap CI + Qualitative Cases
+10:20:41 [INFO] ============================================================
+10:20:41 [INFO] Params: N_BOOT=200, RNG_SEED=42, TAU_OVERLAP=0.7, TAU_DUAL=0.05
+10:20:41 [INFO] 加载 fold2 数据...
+10:20:42 [INFO] Fold2: 1684 images, 2530 GT boxes
+10:20:45 [INFO] Fold2 seed=42: 1684 images loaded
+10:20:46 [INFO] Fold2 seed=1337: 1684 images loaded
+10:20:48 [INFO] Fold2 seed=2024: 1684 images loaded
+10:20:48 [INFO] 加载 fold1 数据...
+10:20:48 [INFO] Fold1: 1562 images, 3937 GT boxes
+10:20:48 [INFO] Fold1 seed=42: 1562 images loaded
+10:20:49 [INFO] Fold1 seed=1337: 1562 images loaded
+10:20:49 [INFO] Fold1 seed=2024: 1562 images loaded
+10:20:49 [INFO] ============================================================
+10:20:49 [INFO] Sanity Check: point estimates vs recount.md
+10:20:49 [INFO] ============================================================
+10:20:50 [INFO] Fold2 seed=42 RGB: eval=0.2522 ref=0.2522 Δ=0.0000 [PASS]
+10:20:51 [INFO] Fold2 seed=42 GateA: eval=0.2620 ref=0.2620 Δ=0.0000 [PASS]
+10:20:52 [INFO] Fold2 seed=1337 RGB: eval=0.2543 ref=0.2543 Δ=0.0000 [PASS]
+10:20:52 [INFO] Fold2 seed=1337 GateA: eval=0.2552 ref=0.2552 Δ=0.0000 [PASS]
+10:20:55 [INFO] Fold2 seed=2024 RGB: eval=0.2538 ref=0.2538 Δ=0.0000 [PASS]
+10:20:57 [INFO] Fold2 seed=2024 GateA: eval=0.2537 ref=0.2537 Δ=0.0000 [PASS]
+10:20:58 [INFO] Fold1 seed=42 GateA: eval=0.1799 ref=0.1799 Δ=0.0000 [PASS]
+10:20:58 [INFO] Fold1 seed=1337 GateA: eval=0.1665 ref=0.1665 Δ=0.0000 [PASS]
+10:20:58 [INFO] Fold1 seed=2024 GateA: eval=0.1854 ref=0.1854 Δ=0.0000 [PASS]
+10:20:58 [INFO] ============================================================
+10:20:58 [INFO] Bootstrap CI 计算
+10:20:58 [INFO] ============================================================
+10:20:58 [INFO] Fold2 seed=42: RGB vs Dual...
+10:23:26 [INFO]     delta bootstrap 50/200: mean_delta=0.087753
+10:25:52 [INFO]     delta bootstrap 100/200: mean_delta=0.087919
+10:28:20 [INFO]     delta bootstrap 150/200: mean_delta=0.087884
+10:30:51 [INFO]     delta bootstrap 200/200: mean_delta=0.087858
+10:30:51 [INFO]   Δ=0.0880 CI=[0.0831, 0.0938]
+10:30:51 [INFO] Fold2 seed=42: RGB vs GateA...
+10:34:56 [INFO]     delta bootstrap 50/200: mean_delta=0.009925
+10:39:02 [INFO]     delta bootstrap 100/200: mean_delta=0.009907
+10:43:47 [INFO]     delta bootstrap 150/200: mean_delta=0.009893
+10:49:28 [INFO]     delta bootstrap 200/200: mean_delta=0.009900
+10:49:28 [INFO]   Δ=0.0098 CI=[0.0080, 0.0117]
+10:49:28 [INFO] Fold2 seed=1337: RGB vs Dual...
+10:51:53 [INFO]     delta bootstrap 50/200: mean_delta=0.053371
+10:53:56 [INFO]     delta bootstrap 100/200: mean_delta=0.053265
+10:55:56 [INFO]     delta bootstrap 150/200: mean_delta=0.053436
+10:57:08 [INFO]     delta bootstrap 200/200: mean_delta=0.053394
+10:57:08 [INFO]   Δ=0.0530 CI=[0.0484, 0.0588]
+10:57:08 [INFO] Fold2 seed=1337: RGB vs GateA...
+10:58:27 [INFO]     delta bootstrap 50/200: mean_delta=0.000755
+10:59:48 [INFO]     delta bootstrap 100/200: mean_delta=0.000767
+11:01:09 [INFO]     delta bootstrap 150/200: mean_delta=0.000737
+11:02:32 [INFO]     delta bootstrap 200/200: mean_delta=0.000764
+11:02:32 [INFO]   Δ=0.0009 CI=[0.0000, 0.0016]
+11:02:32 [INFO] Fold2 seed=2024: RGB vs Dual...
+11:05:53 [INFO]     delta bootstrap 50/200: mean_delta=0.094921
+11:08:41 [INFO]     delta bootstrap 100/200: mean_delta=0.094934
+11:11:40 [INFO]     delta bootstrap 150/200: mean_delta=0.094959
+11:14:35 [INFO]     delta bootstrap 200/200: mean_delta=0.094949
+11:14:35 [INFO]   Δ=0.0952 CI=[0.0908, 0.0988]
+11:14:35 [INFO] Fold2 seed=2024: RGB vs GateA...
+11:18:02 [INFO]     delta bootstrap 50/200: mean_delta=-0.000074
+11:21:13 [INFO]     delta bootstrap 100/200: mean_delta=-0.000088
+11:24:11 [INFO]     delta bootstrap 150/200: mean_delta=-0.000087
+11:27:07 [INFO]     delta bootstrap 200/200: mean_delta=-0.000087
+11:27:07 [INFO]   Δ=-0.0001 CI=[-0.0003, -0.0000]
+11:27:07 [INFO] Fold1 seed=42: RGB vs GateA...
+11:27:29 [INFO]     delta bootstrap 50/200: mean_delta=0.107296
+11:27:51 [INFO]     delta bootstrap 100/200: mean_delta=0.107102
+11:28:14 [INFO]     delta bootstrap 150/200: mean_delta=0.106663
+11:28:36 [INFO]     delta bootstrap 200/200: mean_delta=0.107158
+11:28:36 [INFO]   Δ=0.1080 CI=[0.0964, 0.1183]
+11:28:36 [INFO] Fold1 seed=1337: RGB vs GateA...
+11:29:07 [INFO]     delta bootstrap 50/200: mean_delta=0.054091
+11:29:37 [INFO]     delta bootstrap 100/200: mean_delta=0.053802
+11:30:06 [INFO]     delta bootstrap 150/200: mean_delta=0.053687
+11:30:37 [INFO]     delta bootstrap 200/200: mean_delta=0.054021
+11:30:37 [INFO]   Δ=0.0543 CI=[0.0459, 0.0635]
+11:30:37 [INFO] Fold1 seed=2024: RGB vs GateA...
+11:31:02 [INFO]     delta bootstrap 50/200: mean_delta=0.126315
+11:31:26 [INFO]     delta bootstrap 100/200: mean_delta=0.127002
+11:31:50 [INFO]     delta bootstrap 150/200: mean_delta=0.126747
+11:32:14 [INFO]     delta bootstrap 200/200: mean_delta=0.127052
+11:32:14 [INFO]   Δ=0.1270 CI=[0.1178, 0.1369]
+11:32:14 [INFO] Bootstrap CI: /mnt/topic2_workspace/runs/f6_evidence_package_20260613/bootstrap_ci.csv (9 rows)
+11:32:14 [INFO] ============================================================
+11:32:14 [INFO] Qualitative Case Selection
+11:32:14 [INFO] ============================================================
+11:32:15 [INFO] Fold2 seed=42: 2632 candidate cases
+11:32:16 [INFO] Fold1 seed=42: 798 candidate cases
+11:32:16 [INFO] Selected 11 qualitative cases
+11:32:16 [INFO]   rgb_miss_rescued_by_gateA_1: fold=2 RGB 1FN → GateA 0FN (rescued 1)
+11:32:16 [INFO]   rgb_miss_rescued_by_gateA_2: fold=2 RGB 1FN → GateA 0FN (rescued 1)
+11:32:16 [INFO]   rgb_miss_rescued_by_gateA_3: fold=2 RGB 1FN → GateA 0FN (rescued 1)
+11:32:16 [INFO]   dual_fp_rejected_by_gateA_1: fold=2 Dual 117FP → GateA 60FP (rejected 57)
+11:32:16 [INFO]   dual_fp_rejected_by_gateA_2: fold=2 Dual 103FP → GateA 49FP (rejected 54)
+11:32:16 [INFO]   dual_fp_rejected_by_gateA_3: fold=2 Dual 112FP → GateA 63FP (rejected 49)
+11:32:16 [INFO]   harmful_thermal_collapse_1: fold=2 RGB 33FP → Dual 114FP (harm +81FP)
+11:32:16 [INFO]   harmful_thermal_collapse_2: fold=2 RGB 33FP → Dual 112FP (harm +79FP)
+11:32:16 [INFO]   thermal_helpful_retained_1: fold=1 Dual +1TP, GateA retains 1/1 (100%)
+11:32:16 [INFO]   thermal_helpful_retained_2: fold=1 Dual +1TP, GateA retains 1/1 (100%)
+11:32:16 [INFO]   thermal_helpful_retained_3: fold=1 Dual +1TP, GateA retains 1/1 (100%)
+11:32:16 [INFO] Qualitative: /mnt/topic2_workspace/runs/f6_evidence_package_20260613/qualitative_cases.csv (11 rows)
+11:32:16 [INFO] ============================================================
+11:32:16 [INFO] Writing recount + anomalies
+11:32:16 [INFO] ============================================================
+11:32:16 [INFO] Recount: /mnt/topic2_workspace/runs/f6_evidence_package_20260613/recount.md
+11:32:16 [INFO] Anomalies: /mnt/topic2_workspace/runs/f6_evidence_package_20260613/anomalies.md
+11:32:16 [INFO] 完成! 4294.1s (71.6min)
+11:32:16 [INFO] Bootstrap CI: 9 targets
+11:32:16 [INFO] Qualitative: 11 cases

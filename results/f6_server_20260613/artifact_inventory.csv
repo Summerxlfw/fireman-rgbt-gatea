@@ -1,0 +1,35 @@
+artifact_type,role,fold,seed,path,exists,size_bytes,notes
+prediction_jsonl,rgb_predictions,1,42,/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/predictions_fold1_seed42_rgb.jsonl,True,1150904,
+prediction_jsonl,dual_predictions,1,42,/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/predictions_fold1_seed42_dual.jsonl,True,950212,
+prediction_jsonl,rgb_predictions,1,1337,/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/predictions_fold1_seed1337_rgb.jsonl,True,1798508,
+prediction_jsonl,dual_predictions,1,1337,/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/predictions_fold1_seed1337_dual.jsonl,True,1086619,
+prediction_jsonl,rgb_predictions,1,2024,/mnt/topic2_workspace/runs/formal_p0_p1_targeted_20260612/g1a_predictions/predictions_fold1_seed2024_rgb.jsonl,True,1483372,
+prediction_jsonl,dual_predictions,1,2024,/mnt/topic2_workspace/runs/formal_p0_p1_targeted_20260612/g1a_predictions/predictions_fold1_seed2024_dual.jsonl,True,904547,
+prediction_jsonl,rgb_predictions,2,42,/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/predictions_fold2_seed42_rgb.jsonl,True,4014941,
+prediction_jsonl,dual_predictions,2,42,/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/predictions_fold2_seed42_dual.jsonl,True,26050248,
+prediction_jsonl,rgb_predictions,2,1337,/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/predictions_fold2_seed1337_rgb.jsonl,True,3214999,
+prediction_jsonl,dual_predictions,2,1337,/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/predictions_fold2_seed1337_dual.jsonl,True,13252307,
+prediction_jsonl,rgb_predictions,2,2024,/mnt/topic2_workspace/runs/formal_p0_p1_targeted_20260612/g1a_predictions/predictions_fold2_seed2024_rgb.jsonl,True,10559013,
+prediction_jsonl,dual_predictions,2,2024,/mnt/topic2_workspace/runs/formal_p0_p1_targeted_20260612/g1a_predictions/predictions_fold2_seed2024_dual.jsonl,True,15285495,
+checkpoint_rgb_only,rgb_only_fold0_best,0,42,/mnt/topic2_workspace/runs/phase_f2_rgbonly_fold0_cm10_42/weights/best.pt,False,,cm10
+checkpoint_rgb_only,rgb_only_fold0_best,0,42,/mnt/topic2_workspace/runs/phase_f2_rgbonly_fold0_42/weights/best.pt,False,,non-cm10
+checkpoint_rgb_only,rgb_only_fold0_best,0,1337,/mnt/topic2_workspace/runs/phase_f2_rgbonly_fold0_cm10_1337/weights/best.pt,False,,cm10
+checkpoint_rgb_only,rgb_only_fold0_best,0,1337,/mnt/topic2_workspace/runs/phase_f2_rgbonly_fold0_1337/weights/best.pt,False,,non-cm10
+checkpoint_rgb_only,rgb_only_fold0_best,0,2024,/mnt/topic2_workspace/runs/phase_f2_rgbonly_fold0_cm10_2024/weights/best.pt,False,,cm10
+checkpoint_rgb_only,rgb_only_fold0_best,0,2024,/mnt/topic2_workspace/runs/phase_f2_rgbonly_fold0_2024/weights/best.pt,False,,non-cm10
+checkpoint_dual,dual_fold0_best,0,42,/mnt/topic2_workspace/runs/phase_f2_dual_fold0_seed42/weights/best.pt,False,,EXPECTED_MISSING
+checkpoint_dual,dual_fold0_best,0,1337,/mnt/topic2_workspace/runs/phase_f2_dual_fold0_seed1337/weights/best.pt,False,,EXPECTED_MISSING
+checkpoint_dual,dual_fold0_best,0,2024,/mnt/topic2_workspace/runs/phase_f2_dual_fold0_seed2024/weights/best.pt,False,,EXPECTED_MISSING
+checkpoint_dual,f1_pilot_dual_seed42,pilot,42,/mnt/topic2_workspace/runs/phase_f1_50epoch_seed42/weights/best.pt,True,10435125,"Phase F-1 pilot, trained on fire_loco_pilot_only_paired, NOT formal fold0"
+gt_labels,fold1,fold1,,/mnt/topic2_datasets/fire_loco_fold1/labels/val,True,,1562 label files
+gt_labels,fold2_nirfree,fold2_nirfree,,/mnt/topic2_datasets/fire_loco_fold2_nirfree/labels/val,True,,1684 label files
+gt_labels,JAG,JAG,,/mnt/topic2_datasets/JAG2023_RGBT_Wildfire/converted/labels/val,True,,146 label files
+eval_summary,fold0_rgb_cm10_3seed,0,all,/mnt/topic2_workspace/runs/eval_suite_rgbonly_fold0_cm10_20260601/summary.csv,True,498,
+eval_summary,fold0_dual_single_anchor,0,42,/mnt/topic2_workspace/runs/eval_suite_phase_f1_dual/jag_map.log,True,3671,
+gate_sweep,fold2_2seed,2,"42,1337",/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/gate_sweep_fold2.csv,True,71947,
+gate_sweep,fold1_2seed,1,"42,1337",/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/gate_sweep_fold1.csv,True,919,
+gate_ablation,3seed_formal,"1,2","42,1337,2024",/mnt/topic2_workspace/runs/formal_p0_p1_targeted_20260612/gate_ablation_recount.csv,True,360292,
+recount,g1a_2seed,"1,2","42,1337",/mnt/topic2_workspace/runs/f5_g1a_safe_late_gate_20260607/recount.md,True,1414,
+recount,formal_3seed,"1,2","42,1337,2024",/mnt/topic2_workspace/runs/formal_p0_p1_targeted_20260612/recount.md,True,5038,
+script,g1a_main,,,/mnt/topic2_workspace/scripts/run_f5_g1a_safe_late_gate_20260607.py,True,39389,
+script,g1a_seed2024,,,/mnt/topic2_workspace/scripts/run_g1a_seed2024_20260612.py,True,16774,

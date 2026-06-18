@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this code or the released result/prediction data, please cite the paper below."
+title: >-
+  Cross-Dataset Reliability of Thermal Fusion in UAV Wildfire Detection:
+  a Negative-Transfer-Safe Admission Baseline and an Annotation-Granularity Benchmark Finding
+type: software
+authors:
+  - family-names: Xia
+    given-names: Tian
+    orcid: "https://orcid.org/0009-0001-9697-8550"
+    affiliation: "College of Medical Instrumentation, Shanghai University of Medicine and Health Sciences"
+  - family-names: Wang
+    given-names: Zhenqing
+    orcid: "https://orcid.org/0009-0002-7974-9550"
+    affiliation: "Huludao Central Hospital"
+  - family-names: Sun
+    given-names: Liping
+    orcid: "https://orcid.org/0000-0003-1642-0168"
+    affiliation: "College of Medical Instrumentation, Shanghai University of Medicine and Health Sciences"
+year: 2026
+# DOI for this deposit (Zenodo) to be added once minted:
+# doi: 10.5281/zenodo.XXXXXXX
+preferred-citation:
+  type: article
+  title: >-
+    Cross-Dataset Reliability of Thermal Fusion in UAV Wildfire Detection:
+    a Negative-Transfer-Safe Admission Baseline and an Annotation-Granularity Benchmark Finding
+  authors:
+    - family-names: Xia
+      given-names: Tian
+    - family-names: Wang
+      given-names: Zhenqing
+    - family-names: Sun
+      given-names: Liping
+  journal: "Computers and Electronics in Agriculture"
+  year: 2026
+  notes: "Under review; paper DOI to be added on acceptance."
