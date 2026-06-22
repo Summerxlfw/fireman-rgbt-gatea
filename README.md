@@ -59,8 +59,8 @@ SHA-256 that back the reported results are for `loco_fold1/` and `loco_fold2_nir
 
 ## Datasets (third-party — NOT redistributed)
 
-Obtained from the original sources under their own terms; we do not redistribute any dataset or its
-labels. Only the per-image **model prediction** JSONL (the authors' own outputs) is included here;
+Obtained from the original sources under their own terms; this package does not redistribute any
+dataset or its labels. Only the per-image **model prediction** JSONL (the authors' own outputs) is included here;
 the ground-truth labels are regenerated from the datasets with the evaluation scripts, after which
 the evaluation and bootstrap re-run end to end.
 

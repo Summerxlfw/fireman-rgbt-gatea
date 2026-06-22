@@ -30,6 +30,7 @@ GROUPS = [
     ("harmful_thermal_collapse", "Harmful thermal\ncollapse guarded"),
     ("thermal_helpful_retained", "Helpful thermal\nretained by GateA"),
 ]
+CASES_PER_GROUP = 2
 
 
 def read_csv(path):
@@ -92,49 +93,52 @@ def render():
     grouped, boxes_by_case = load_cases()
     os.makedirs(OUT, exist_ok=True)
 
-    fig, axes = plt.subplots(3, 4, figsize=(16.2, 11.2))
+    fig, axes = plt.subplots(CASES_PER_GROUP, 4, figsize=(16.2, 7.8))
     fig.patch.set_facecolor("white")
 
     for col, (case_type, title) in enumerate(GROUPS):
         rows = grouped.get(case_type, [])
-        for row_i in range(3):
+        selected_rows = rows[:CASES_PER_GROUP]
+        for row_i in range(CASES_PER_GROUP):
             ax = axes[row_i][col]
             ax.set_axis_off()
-            if row_i >= len(rows):
+            if row_i >= len(selected_rows):
                 continue
-            row = rows[row_i]
+            row = selected_rows[row_i]
             case_id = row["case_id"]
             img = Image.open(boxes_by_case[case_id]).convert("RGB")
             ax.imshow(img)
+            # Keep the manuscript figure readable at single-column scale; the
+            # full per-case tallies remain in supplementary Table S3.
             ax.text(
-                0.01,
-                0.99,
-                f"{chr(ord('A') + col)}{row_i + 1} | fold {row['fold']} | {row['why_selected']}",
+                0.02,
+                0.98,
+                f"{chr(ord('A') + col)}{row_i + 1}",
                 transform=ax.transAxes,
                 va="top",
                 ha="left",
-                fontsize=8,
+                fontsize=30,
+                fontweight="bold",
                 color="black",
-                bbox=dict(facecolor="white", edgecolor="0.25", linewidth=0.35, alpha=0.88, pad=2),
+                bbox=dict(facecolor="white", edgecolor="0.25", linewidth=0.55, alpha=0.9, pad=3.5),
             )
-        axes[0][col].set_title(title, fontsize=12, fontweight="bold", pad=10)
+        axes[0][col].set_title(title, fontsize=22, fontweight="bold", pad=6)
 
     fig.suptitle(
-        "Qualitative GateA behavior on the 11 pre-cataloged cases (illustration only)",
-        fontsize=14,
+        "Representative GateA behavior (two examples per behavior)",
+        fontsize=23,
         fontweight="bold",
-        y=0.987,
+        y=0.982,
     )
     fig.text(
         0.5,
-        0.012,
-        "Each tile is a server-exported real-frame overlay: green=GT, blue=RGB-only prediction, red=unconditional dual prediction, yellow=GateA output. "
-        "Cases illustrate rescue, false-positive rejection, harmful-collapse guarding, and helpful-thermal retention; they are not statistical evidence.",
+        0.018,
+        "Real-frame overlays: green=GT, blue=RGB-only, red=unconditional dual, yellow=GateA. Full 11-case catalog and tallies are in Table S3.",
         ha="center",
         va="bottom",
-        fontsize=8,
+        fontsize=16,
     )
-    fig.subplots_adjust(left=0.015, right=0.985, top=0.93, bottom=0.05, wspace=0.045, hspace=0.08)
+    fig.subplots_adjust(left=0.012, right=0.988, top=0.855, bottom=0.090, wspace=0.030, hspace=0.055)
 
     for ext in ("pdf", "png"):
         fig.savefig(os.path.join(OUT, f"fig5.{ext}"), dpi=300)

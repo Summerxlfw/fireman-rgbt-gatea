@@ -9,7 +9,7 @@
   Panel B 源 = 03_evidence/f6_tables_20260613/bootstrap_ci_table.csv (E011 per-seed delta+CI) +
                03_evidence/f6_tables_20260613/fold2_stress_table.csv (E003 GateA mean delta)
 - Panel A: in-domain fire AP50 per-seed,motif="齐(dual) vs 崩(RGB-only 2/3)";不标 mean、不标裸增益(C016 caveat)。
-- Panel B: cross-dataset fold2 GateA−RGB per-seed delta(smoke-scoped per C015);seed2024 贴零/微负=safe floor;不美化成全正大增益。
+- Panel B: cross-dataset fold2 GateA−RGB per-seed delta(smoke-scoped);seed2024 贴零/微负=near-RGB safety margin;不美化成全正大增益。
 - 图例无 "with GateA"(Panel A 是 in-domain 普通 dual 臂 F12,非 GateA);全图无 SOTA 措辞。
 - fonttype=42 防 IEEE Type-3(memory feedback_figure_matplotlib_type3_font_ieee)。
 此图仅作 GA 真数据底图供人 PPT/矢量重画嵌入;image2 蓝图位图不入论文。
@@ -122,10 +122,10 @@ def main():
     axB.set_xticklabels([f"seed {s}" for s in SEEDS], fontsize=12)
     axB.tick_params(axis="y", labelsize=11)
     axB.set_ylabel(r"$\Delta$ mAP$_{50}$ (GateA $-$ RGB)", fontsize=14)
-    axB.set_title("Cross-dataset fold2 safe-admission\n(smoke-scoped; fire excl. per C015)", fontsize=12)
+    axB.set_title("Cross-dataset fold2 safe-admission\n(smoke-scoped fold2 comparison)", fontsize=12)
     # 注释放右侧空白区(seed1337/2024 列上方,delta≈0 留白多)分行,避开标题与 seed42 CI
     axB.text(0.60, 0.80,
-             f"Near-neutral\n(mean {mean_delta:+.4f})\nsafe floor $\\approx$ RGB",
+             f"Near-neutral\n(mean {mean_delta:+.4f})\nnear RGB",
              transform=axB.transAxes, ha="left", va="top", fontsize=11, color="#333333")
     axB.set_ylim(min(lo) - 0.002, max(hi) + 0.005)
     for sp in ("top", "right"):
