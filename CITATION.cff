@@ -9,10 +9,9 @@ authors:
     given-names: Tian
     orcid: "https://orcid.org/0009-0001-9697-8550"
     affiliation: "College of Medical Instrumentation, Shanghai University of Medicine and Health Sciences"
-  - family-names: Wang
-    given-names: Zhenqing
-    orcid: "https://orcid.org/0009-0002-7974-9550"
-    affiliation: "Huludao Central Hospital"
+  - family-names: Liu
+    given-names: Feng
+    affiliation: "Endoscopy Center, Shanghai Tenth People's Hospital"
   - family-names: Sun
     given-names: Liping
     orcid: "https://orcid.org/0000-0003-1642-0168"
@@ -28,8 +27,8 @@ preferred-citation:
   authors:
     - family-names: Xia
       given-names: Tian
-    - family-names: Wang
-      given-names: Zhenqing
+    - family-names: Liu
+      given-names: Feng
     - family-names: Sun
       given-names: Liping
   journal: "Computers and Electronics in Agriculture"
